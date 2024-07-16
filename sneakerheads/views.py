@@ -23,3 +23,12 @@ def sneakerpage(request, sneakerId):
   sneaker = get_object_or_404(Sneaker, id=sneakerId)
   serializer = SneakerSerializer(sneaker)
   return JsonResponse(serializer.data, safe=False)
+
+@api_view(['PUT'])
+def sneakerupdate(request, sneakerId):
+  sneaker = get_object_or_404(Sneaker, id=sneakerId)
+  serializer = SneakerSerializer(sneaker, data=request.data, partial=True)
+  if serializer.is_valid():
+    serializer.save()
+    return JsonResponse({'message': 'Sneaker updated successfully!', 'sneakers': serializer.data}, status=201)
+  return JsonResponse(serializer.errors, status=400)
