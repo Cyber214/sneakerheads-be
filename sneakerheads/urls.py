@@ -23,4 +23,5 @@ urlpatterns = [
     path('sneakers/new/', views.newsneaker, name='newsneaker'),
     path('sneakers/<int:sneakerId>/', views.sneakerpage, name='sneakerpage'),
     path('sneakers/<int:sneakerId>/update/', views.sneakerupdate, name='sneakerupdate'),
+    path('sneakers/<int:sneakerId>/delete/', views.sneakerdelete, name='sneakerdelete'),
 ]
