@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sneakers/', views.sneakers, name='sneakers'),
     path('sneakers/new/', views.newsneaker, name='newsneaker'),
+    path('sneakers/<int:sneakerId>/', views.sneakerpage, name='sneakerpage'),
 ]
