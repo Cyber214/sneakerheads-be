@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
+from django.core.wsgi import get_wsgi_application
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -79,6 +80,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'sneakerheads.wsgi.application'
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sneakerheads.settings')
+application = get_wsgi_application()
 
 
 # Database
