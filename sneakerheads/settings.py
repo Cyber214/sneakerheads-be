@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-z2@*1=2cc$&7o7ig&ds+q64jrdw_&9($qm^q^e)3b7q@dh9__m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['3.23.128.176', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -56,6 +55,9 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://localhost:3000",
+    'http://3.23.128.176',
+    "http://www.sneakerheads.live.s3-website.us-east-2.amazonaws.com",
 ]
 
 ROOT_URLCONF = 'sneakerheads.urls'

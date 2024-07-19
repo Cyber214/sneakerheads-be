@@ -23,7 +23,7 @@ def newsneaker(request):
 def sneakerpage(request, sneakerId):
   sneaker = get_object_or_404(Sneaker, id=sneakerId)
   serializer = SneakerSerializer(sneaker)
-  return JsonResponse(serializer.data, safe=False)
+  return JsonResponse(serializer.data, status=200)
 
 @api_view(['PUT'])
 def sneakerupdate(request, sneakerId):
